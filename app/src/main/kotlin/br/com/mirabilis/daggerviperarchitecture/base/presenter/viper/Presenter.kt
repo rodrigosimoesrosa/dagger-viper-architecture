@@ -10,6 +10,7 @@ import br.com.mirabilis.daggerviperarchitecture.base.view.PresenterView
  * Created by rodrigosimoesrosa on 27/05/19.
  * Copyright © 2019. All rights reserved.
  */
+@Suppress("DEPRECATION")
 abstract class Presenter<V : PresenterView, A : Activity, R : Router<A>> :
         Presenter<V>() {
 

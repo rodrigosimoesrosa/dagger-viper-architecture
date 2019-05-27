@@ -14,9 +14,9 @@ import android.view.Gravity
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
-import br.com.mirabilis.mytaxi.base.ui.data.ActivityData
-import br.com.mirabilis.mytaxi.extension.cast
-import br.com.mirabilis.mytaxi.extension.checkItemsAre
+import br.com.mirabilis.daggerviperarchitecture.base.ui.data.ActivityData
+import br.com.mirabilis.daggerviperarchitecture.extension.cast
+import br.com.mirabilis.daggerviperarchitecture.extension.checkItemsAre
 import java.io.Serializable
 
 /**
@@ -48,10 +48,10 @@ abstract class BaseActivity : AppCompatActivity() {
 
             try {
                 activity?.startActivity(Intent(Intent.ACTION_VIEW,
-                        Uri.parse("${Store.MARKET}$appPackageName")))
+                    Uri.parse("${Store.MARKET}$appPackageName")))
             } catch (e: ActivityNotFoundException) {
                 activity?.startActivity(Intent(Intent.ACTION_VIEW,
-                        Uri.parse("${Store.PLAY}$appPackageName")))
+                    Uri.parse("${Store.PLAY}$appPackageName")))
             }
         }
     }

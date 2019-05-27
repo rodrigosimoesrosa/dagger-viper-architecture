@@ -1,8 +1,8 @@
 package br.com.mirabilis.daggerviperarchitecture.base.ui
 
 import android.os.Bundle
-import br.com.mirabilis.mytaxi.base.presenter.PresenterActions
-import br.com.mirabilis.mytaxi.base.view.PresenterView
+import br.com.mirabilis.daggerviperarchitecture.base.presenter.PresenterActions
+import br.com.mirabilis.daggerviperarchitecture.base.view.PresenterView
 
 /**
  * Created by rodrigosimoesrosa on 2019-05-21.

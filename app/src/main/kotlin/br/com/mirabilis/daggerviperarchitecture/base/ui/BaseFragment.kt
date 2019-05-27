@@ -6,8 +6,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import br.com.mirabilis.mytaxi.extension.cast
-import br.com.mirabilis.mytaxi.extension.checkItemsAre
+import br.com.mirabilis.daggerviperarchitecture.extension.cast
+import br.com.mirabilis.daggerviperarchitecture.extension.checkItemsAre
 import java.io.Serializable
 
 /**
