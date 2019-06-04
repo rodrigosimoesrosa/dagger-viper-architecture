@@ -1,4 +1,4 @@
-package br.com.mirabilis.daggerviperarchitecture.presenter.second
+package br.com.mirabilis.daggerviperarchitecture.presenter.login
 
 import br.com.mirabilis.daggerviperarchitecture.base.presenter.mvp.Presenter
 import br.com.mirabilis.daggerviperarchitecture.interactor.info.InfoInteractor
@@ -10,7 +10,7 @@ import javax.inject.Singleton
  * Copyright © 2019. All rights reserved.
  */
 @Singleton
-class SecondPresenter @Inject constructor() : Presenter<Second.View>(), Second.Presenter {
+class SecondPresenter @Inject constructor() : Presenter<Login.View>(), Login.Presenter {
 
     @Inject lateinit var getInfoInteractor: InfoInteractor.Get
 

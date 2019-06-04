@@ -1,11 +1,11 @@
 package br.com.mirabilis.daggerviperarchitecture.ui.main
 
 import android.os.Bundle
+import android.view.View
 import br.com.mirabilis.daggerviperarchitecture.R
 import br.com.mirabilis.daggerviperarchitecture.base.ui.MVPBaseActivity
 import br.com.mirabilis.daggerviperarchitecture.entity.business.User
 import br.com.mirabilis.daggerviperarchitecture.presenter.main.Main
-import br.com.mirabilis.daggerviperarchitecture.ui.second.SecondActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -19,11 +19,13 @@ class MainActivity : MVPBaseActivity<Main.View, Main.Presenter>(), Main.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        btnSecondActivity.setOnClickListener { startActivity(SecondActivity::class.java) }
         presenter.loadUser()
     }
 
     override fun showUser(user: User) {
+        progressBar.visibility = View.GONE
+        lblText.visibility = View.VISIBLE
+
         lblText.text = user.name
     }
 

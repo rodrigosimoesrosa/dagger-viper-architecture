@@ -1,7 +1,7 @@
 package br.com.mirabilis.daggerviperarchitecture.di.module
 
 import br.com.mirabilis.daggerviperarchitecture.ui.main.MainActivity
-import br.com.mirabilis.daggerviperarchitecture.ui.second.SecondActivity
+import br.com.mirabilis.daggerviperarchitecture.ui.login.LoginActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -16,5 +16,5 @@ interface ActivitiesModule {
     fun contributeMainActivity(): MainActivity
 
     @ContributesAndroidInjector
-    fun contributeSecondActivity(): SecondActivity
+    fun contributeSecondActivity(): LoginActivity
 }

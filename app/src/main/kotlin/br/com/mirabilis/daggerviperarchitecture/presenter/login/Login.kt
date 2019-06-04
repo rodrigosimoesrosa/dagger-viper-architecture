@@ -1,20 +1,18 @@
-package br.com.mirabilis.daggerviperarchitecture.presenter.second
+package br.com.mirabilis.daggerviperarchitecture.presenter.login
 
 import br.com.mirabilis.daggerviperarchitecture.base.presenter.PresenterActions
 import br.com.mirabilis.daggerviperarchitecture.base.view.PresenterView
-import br.com.mirabilis.daggerviperarchitecture.entity.business.Info
 
 /**
  * Created by rodrigosimoesrosa on 2019-05-27.
  * Copyright © 2019. All rights reserved.
  */
-object Second {
+object Login {
 
-    interface View : PresenterView {
-        fun showInfo(info: Info)
-    }
+    interface View : PresenterView
 
     interface Presenter: PresenterActions<View> {
-        fun loadInfo()
+        fun doLogin(username: String, password: String)
     }
+
 }
