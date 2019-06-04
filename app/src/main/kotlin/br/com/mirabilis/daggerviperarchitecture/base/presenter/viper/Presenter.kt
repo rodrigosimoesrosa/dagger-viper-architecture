@@ -7,7 +7,7 @@ import br.com.mirabilis.daggerviperarchitecture.base.router.Router
 import br.com.mirabilis.daggerviperarchitecture.base.view.PresenterView
 
 /**
- * Created by rodrigosimoesrosa on 27/05/19.
+ * Created by rodrigosimoesrosa on 2019-06-03.
  * Copyright © 2019. All rights reserved.
  */
 @Suppress("DEPRECATION")

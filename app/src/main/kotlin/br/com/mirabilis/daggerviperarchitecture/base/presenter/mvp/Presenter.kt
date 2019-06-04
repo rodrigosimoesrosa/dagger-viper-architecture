@@ -3,21 +3,20 @@ package br.com.mirabilis.daggerviperarchitecture.base.presenter.mvp
 import android.app.Activity
 import android.content.Context
 import android.support.v4.app.Fragment
-import br.com.mirabilis.daggerviperarchitecture.base.interactor.LifeCycleInteractor
+import br.com.mirabilis.daggerviperarchitecture.base.interactor.Interactor
 import br.com.mirabilis.daggerviperarchitecture.base.presenter.PresenterActions
 import br.com.mirabilis.daggerviperarchitecture.base.view.PresenterView
 
 /**
- * Created by rodrigosimoesrosa on 27/05/19.
+ * Created by rodrigosimoesrosa on 2019-06-03.
  * Copyright © 2019. All rights reserved.
  */
 @Suppress("DEPRECATION")
-abstract class Presenter<V : PresenterView> :
-    PresenterActions<V> {
+abstract class Presenter<V : PresenterView> : PresenterActions<V> {
 
     var view: V? = null
 
-    private val interactors: MutableList<LifeCycleInteractor> = mutableListOf()
+    private val interactors: MutableList<Interactor.LifeCycle> = mutableListOf()
 
     @Suppress("UNCHECKED_CAST")
     override fun attachView(view: V) {
@@ -30,11 +29,11 @@ abstract class Presenter<V : PresenterView> :
         interactors.clear()
     }
 
-    protected fun <I : LifeCycleInteractor> addInteractor(interactor: I) {
+    protected fun <I : Interactor.LifeCycle> addInteractor(interactor: I) {
         interactors.add(interactor)
     }
 
-    protected fun <I : LifeCycleInteractor> removeInteractor(interactor: I): Boolean {
+    protected fun <I : Interactor.LifeCycle> removeInteractor(interactor: I): Boolean {
         return interactors.remove(interactor)
     }
 

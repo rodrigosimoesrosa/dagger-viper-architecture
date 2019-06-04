@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DaggerViperArchitecture</string>
+    <string name="btn_go_to_second_screen">Go to Second Screen</string>
 </resources>
