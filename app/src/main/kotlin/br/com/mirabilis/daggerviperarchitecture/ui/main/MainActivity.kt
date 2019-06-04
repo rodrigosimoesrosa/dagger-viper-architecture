@@ -3,7 +3,7 @@ package br.com.mirabilis.daggerviperarchitecture.ui.main
 import android.os.Bundle
 import br.com.mirabilis.daggerviperarchitecture.R
 import br.com.mirabilis.daggerviperarchitecture.base.ui.MVPBaseActivity
-import br.com.mirabilis.daggerviperarchitecture.entity.User
+import br.com.mirabilis.daggerviperarchitecture.entity.business.User
 import br.com.mirabilis.daggerviperarchitecture.presenter.main.Main
 import br.com.mirabilis.daggerviperarchitecture.ui.second.SecondActivity
 import kotlinx.android.synthetic.main.activity_main.*

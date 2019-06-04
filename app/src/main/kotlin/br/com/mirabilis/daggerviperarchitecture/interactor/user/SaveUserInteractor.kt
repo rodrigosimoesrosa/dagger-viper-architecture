@@ -10,12 +10,12 @@ import javax.inject.Singleton
  * Copyright © 2019. All rights reserved.
  */
 @Singleton
-class GetUserInteractor @Inject constructor(): UserInteractor.Get {
+class SaveUserInteractor @Inject constructor(): UserInteractor.Save {
 
-    @Inject lateinit var repository: UserRepository.Get
+    @Inject lateinit var repository: UserRepository.Save
 
-    override fun getUser(): User {
-        return repository.getUser()
+    override fun saveUser(user: User): Boolean {
+        return repository.saveUser(user)
     }
 
 }

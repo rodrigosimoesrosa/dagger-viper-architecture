@@ -1,6 +1,6 @@
 package br.com.mirabilis.daggerviperarchitecture.interactor.info
 
-import br.com.mirabilis.daggerviperarchitecture.entity.Info
+import br.com.mirabilis.daggerviperarchitecture.entity.business.Info
 import br.com.mirabilis.daggerviperarchitecture.repository.info.InfoRepository
 import javax.inject.Inject
 import javax.inject.Singleton

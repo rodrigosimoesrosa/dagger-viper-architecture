@@ -9,14 +9,15 @@ import javax.inject.Singleton
  * Copyright © 2019. All rights reserved.
  */
 @Singleton
-class GetUserRepository @Inject constructor() : UserRepository.Get {
+class SaveUserRepository @Inject constructor() : UserRepository.Save {
+
+    override fun saveUser(user: User): Boolean {
+        //TODO "not implemented"
+        return true
+    }
 
     override fun unregister() {
         //TODO "not implemented"
-    }
-
-    override fun getUser(): User {
-        return User("Rodrigo", "TOKEN")
     }
 
 }

@@ -1,4 +1,4 @@
-package br.com.mirabilis.daggerviperarchitecture.entity
+package br.com.mirabilis.daggerviperarchitecture.entity.business
 
 import java.io.Serializable
 

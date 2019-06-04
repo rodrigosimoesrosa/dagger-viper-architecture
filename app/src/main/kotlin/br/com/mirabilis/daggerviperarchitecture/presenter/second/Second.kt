@@ -2,7 +2,7 @@ package br.com.mirabilis.daggerviperarchitecture.presenter.second
 
 import br.com.mirabilis.daggerviperarchitecture.base.presenter.PresenterActions
 import br.com.mirabilis.daggerviperarchitecture.base.view.PresenterView
-import br.com.mirabilis.daggerviperarchitecture.entity.Info
+import br.com.mirabilis.daggerviperarchitecture.entity.business.Info
 
 /**
  * Created by rodrigosimoesrosa on 2019-05-27.
