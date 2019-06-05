@@ -55,4 +55,6 @@ dependencies {
 
     implementation "com.google.dagger:dagger:$dagger_version"
     implementation "com.google.dagger:dagger-android-support:$dagger_version"
+
+    implementation "com.google.code.gson:gson:$gson_version"
 }

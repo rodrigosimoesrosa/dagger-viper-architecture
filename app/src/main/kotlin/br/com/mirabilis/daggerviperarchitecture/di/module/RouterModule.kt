@@ -1,10 +1,7 @@
 package br.com.mirabilis.daggerviperarchitecture.di.module
 
-import br.com.mirabilis.daggerviperarchitecture.presenter.main.Main
-import br.com.mirabilis.daggerviperarchitecture.presenter.main.MainPresenter
 import br.com.mirabilis.daggerviperarchitecture.presenter.login.Login
-import br.com.mirabilis.daggerviperarchitecture.presenter.login.LoginPresenter
-import br.com.mirabilis.daggerviperarchitecture.presenter.main.router.Router
+import br.com.mirabilis.daggerviperarchitecture.presenter.main.Main
 import dagger.Binds
 import dagger.Module
 
@@ -16,6 +13,11 @@ import dagger.Module
 abstract class RouterModule {
 
     @Binds
-    abstract fun bindMainRouter(presenter: Router): Main.Router
+    abstract fun bindMainRouter(
+            presenter: br.com.mirabilis.daggerviperarchitecture.presenter.main.router.Router): Main.Router
+
+    @Binds
+    abstract fun bindLoginRouter(
+            presenter: br.com.mirabilis.daggerviperarchitecture.presenter.login.router.Router): Login.Router
 
 }

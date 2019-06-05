@@ -35,4 +35,17 @@ object UserInteractor {
         fun onFailed(throwable: Throwable)
     }
 
+    interface OnLogout {
+        fun onSuccess()
+        fun onFailed(throwable: Throwable)
+    }
+
+    interface Logout : Interactor.LifeCycle {
+        fun logout(listener: OnLogout)
+    }
+
+    interface Delete {
+        fun deleteUser(): Boolean
+    }
+
 }

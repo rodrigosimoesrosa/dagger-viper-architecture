@@ -12,8 +12,10 @@ import javax.inject.Singleton
  * Copyright © 2019. All rights reserved.
  */
 @Singleton
-class MainPresenter @Inject constructor(private val getUserInteractor: UserInteractor.Get) :
+class MainPresenter @Inject constructor(private val logoutUserInteractor: UserInteractor.Logout) :
         Presenter<Main.View, MainActivity, Router>(), Main.Presenter {
+
+    @Inject lateinit var getUserInteractor: UserInteractor.Get
 
     override fun loadUser() {
         val user = getUserInteractor.getUser()
@@ -24,4 +26,21 @@ class MainPresenter @Inject constructor(private val getUserInteractor: UserInter
 
         view?.showUser(user)
     }
+
+    private inner class OnLogout : UserInteractor.OnLogout {
+
+        override fun onSuccess() {
+            router.showLogin()
+        }
+
+        override fun onFailed(throwable: Throwable) {
+            view?.showFailed(throwable)
+        }
+
+    }
+
+    override fun logout() {
+        logoutUserInteractor.logout(OnLogout())
+    }
+
 }

@@ -1,7 +1,9 @@
 package br.com.mirabilis.daggerviperarchitecture.presenter.login
 
-import br.com.mirabilis.daggerviperarchitecture.base.presenter.mvp.Presenter
+import br.com.mirabilis.daggerviperarchitecture.base.presenter.viper.Presenter
 import br.com.mirabilis.daggerviperarchitecture.interactor.user.UserInteractor
+import br.com.mirabilis.daggerviperarchitecture.presenter.login.router.Router
+import br.com.mirabilis.daggerviperarchitecture.ui.login.LoginActivity
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -11,9 +13,7 @@ import javax.inject.Singleton
  */
 @Singleton
 class LoginPresenter @Inject constructor(private val loginInteractor: UserInteractor.Login) :
-        Presenter<Login.View>(), Login.Presenter {
-
-    @Inject lateinit var getUserInteractor: UserInteractor.Get
+        Presenter<Login.View, LoginActivity, Router>(), Login.Presenter {
 
     init {
         addInteractor(loginInteractor)
@@ -22,8 +22,7 @@ class LoginPresenter @Inject constructor(private val loginInteractor: UserIntera
     private inner class OnLogin : UserInteractor.OnLogin {
 
         override fun onSuccess() {
-            val user = getUserInteractor.getUser() ?: return
-            view?.showUser(user)
+            router.goBackToMain()
         }
 
         override fun onFailed(throwable: Throwable) {

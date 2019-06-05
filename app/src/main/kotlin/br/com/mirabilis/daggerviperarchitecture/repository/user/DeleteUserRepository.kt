@@ -1,8 +1,6 @@
 package br.com.mirabilis.daggerviperarchitecture.repository.user
 
 import android.content.SharedPreferences
-import br.com.mirabilis.daggerviperarchitecture.entity.business.User
-import br.com.mirabilis.daggerviperarchitecture.extension.toGson
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -11,12 +9,12 @@ import javax.inject.Singleton
  * Copyright © 2019. All rights reserved.
  */
 @Singleton
-class SaveUserRepository @Inject constructor() : UserRepository.Save {
+class DeleteUserRepository @Inject constructor() : UserRepository.Delete {
 
     @Inject lateinit var preference: SharedPreferences
 
-    override fun saveUser(user: User): Boolean {
-        preference.edit().putString(UserRepository.USER, user.toGson()).apply()
+    override fun deleteUser(): Boolean {
+        preference.edit().remove(UserRepository.USER).apply()
         return true
     }
 

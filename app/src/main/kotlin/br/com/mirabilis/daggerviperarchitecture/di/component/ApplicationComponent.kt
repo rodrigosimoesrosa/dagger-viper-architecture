@@ -14,6 +14,7 @@ import javax.inject.Singleton
  */
 @Component(modules = [
     RouterModule::class,
+    StorageModule::class,
     PresenterModule::class,
     RepositoryModule::class,
     InteractorModule::class,
@@ -24,8 +25,12 @@ interface ApplicationComponent {
 
     @Component.Builder
     interface Builder {
+
         @BindsInstance
         fun application(application: Application): Builder
+
+        @BindsInstance
+        fun storageModule(storageModule: StorageModule): Builder
 
         fun build(): ApplicationComponent
     }

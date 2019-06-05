@@ -3,6 +3,7 @@ package br.com.mirabilis.daggerviperarchitecture
 import android.app.Activity
 import android.app.Application
 import br.com.mirabilis.daggerviperarchitecture.di.component.DaggerApplicationComponent
+import br.com.mirabilis.daggerviperarchitecture.di.module.StorageModule
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import javax.inject.Inject
@@ -23,9 +24,10 @@ class MyApplication : Application(), HasActivityInjector {
     override fun onCreate() {
         super.onCreate()
         DaggerApplicationComponent
-            .builder()
-            .application(this)
-            .build()
-            .inject(this)
+                .builder()
+                .application(this)
+                .storageModule(StorageModule())
+                .build()
+                .inject(this)
     }
 }

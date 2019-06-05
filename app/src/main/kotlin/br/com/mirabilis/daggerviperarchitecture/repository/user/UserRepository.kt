@@ -10,6 +10,8 @@ import br.com.mirabilis.daggerviperarchitecture.repository.listener.RepositoryLi
  */
 object UserRepository {
 
+    const val USER = "USER"
+
     interface Get : Repository.Behavior {
         fun getUser(): br.com.mirabilis.daggerviperarchitecture.entity.business.User?
     }
@@ -22,5 +24,9 @@ object UserRepository {
 
     interface Save : Repository.Behavior {
         fun saveUser(user: br.com.mirabilis.daggerviperarchitecture.entity.business.User): Boolean
+    }
+
+    interface Delete : Repository.Behavior {
+        fun deleteUser(): Boolean
     }
 }

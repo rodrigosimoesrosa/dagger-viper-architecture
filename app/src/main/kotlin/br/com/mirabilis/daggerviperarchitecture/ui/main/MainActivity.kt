@@ -19,14 +19,24 @@ class MainActivity : MVPBaseActivity<Main.View, Main.Presenter>(), Main.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        btnLogout.setOnClickListener { presenter.logout() }
+    }
+
+    override fun onResume() {
+        super.onResume()
         presenter.loadUser()
     }
 
     override fun showUser(user: User) {
         progressBar.visibility = View.GONE
         lblText.visibility = View.VISIBLE
+        btnLogout.visibility = View.VISIBLE
 
         lblText.text = user.name
+    }
+
+    override fun showFailed(throwable: Throwable) {
+        showToast(throwable.message)
     }
 
 }

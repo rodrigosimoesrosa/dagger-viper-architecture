@@ -26,6 +26,12 @@ abstract class InteractorModule {
     abstract fun bindSaveUserInteractor(interactor: SaveUserInteractor): UserInteractor.Save
 
     @Binds
+    abstract fun bindDeleteUserInteractor(interactor: DeleteUserInteractor): UserInteractor.Delete
+
+    @Binds
     abstract fun bindLoginInteractor(interactor: LoginUseCase): UserInteractor.Login
+
+    @Binds
+    abstract fun bindLogoutInteractor(interactor: LogoutUseCase): UserInteractor.Logout
 
 }
