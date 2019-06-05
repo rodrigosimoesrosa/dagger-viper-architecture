@@ -14,12 +14,12 @@ https://github.com/google/dagger
 
 [Lyubomir Ganev - Clean Architecture for Android](https://luboganev.dev/blog/clean-architecture-pt1/)
 
-<img src="https://github.com/rodrigosimoesrosa/daggerviperarchitecture/blob/master/images/clean-architecture.jpg" alt="drawing" width="50%"/>
+<img src="https://github.com/rodrigosimoesrosa/dagger-viper-architecture/blob/master/images/clean-architecture.jpg" alt="drawing" width="50%"/>
 
 ## Viper Architecture
 VIPER architecture is composed by Views, Interactors, Presenters, Entities and Routing.
 
-<img src="https://github.com/rodrigosimoesrosa/daggerviperarchitecture/blob/master/images/viper.jpg" alt="drawing" width="50%"/>
+<img src="https://github.com/rodrigosimoesrosa/dagger-viper-architecture/blob/master/images/viper.jpg" alt="drawing" width="50%"/>
 
 
 ## Developed By
