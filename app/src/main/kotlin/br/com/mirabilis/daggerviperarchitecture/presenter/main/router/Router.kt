@@ -16,6 +16,7 @@ class Router @Inject constructor():
 
     override fun showLogin() {
         activity?.startActivity(LoginActivity::class.java)
+        activity?.finish()
     }
 
 }
