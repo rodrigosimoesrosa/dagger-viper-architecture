@@ -13,10 +13,6 @@ import javax.inject.Singleton
 class MainPresenter @Inject constructor(private val getUserInteractor: UserInteractor.Get) :
         Presenter<Main.View>(), Main.Presenter {
 
-    init {
-        addInteractor(getUserInteractor)
-    }
-
     override fun loadUser() {
         view?.showUser(getUserInteractor.getUser())
     }

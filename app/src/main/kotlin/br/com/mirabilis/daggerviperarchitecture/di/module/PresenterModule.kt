@@ -3,7 +3,7 @@ package br.com.mirabilis.daggerviperarchitecture.di.module
 import br.com.mirabilis.daggerviperarchitecture.presenter.main.Main
 import br.com.mirabilis.daggerviperarchitecture.presenter.main.MainPresenter
 import br.com.mirabilis.daggerviperarchitecture.presenter.login.Login
-import br.com.mirabilis.daggerviperarchitecture.presenter.login.SecondPresenter
+import br.com.mirabilis.daggerviperarchitecture.presenter.login.LoginPresenter
 import dagger.Binds
 import dagger.Module
 
@@ -18,6 +18,6 @@ abstract class PresenterModule {
     abstract fun bindMainPresenter(presenter: MainPresenter): Main.Presenter
 
     @Binds
-    abstract fun bindSecondPresenter(presenter: SecondPresenter): Login.Presenter
+    abstract fun bindLoginPresenter(presenter: LoginPresenter): Login.Presenter
 
 }

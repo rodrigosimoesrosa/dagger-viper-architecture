@@ -2,7 +2,9 @@ package br.com.mirabilis.daggerviperarchitecture.di.module
 
 import br.com.mirabilis.daggerviperarchitecture.repository.info.GetInfoRepository
 import br.com.mirabilis.daggerviperarchitecture.repository.info.InfoRepository
+import br.com.mirabilis.daggerviperarchitecture.repository.user.AuthenticateUserRepository
 import br.com.mirabilis.daggerviperarchitecture.repository.user.GetUserRepository
+import br.com.mirabilis.daggerviperarchitecture.repository.user.SaveUserRepository
 import br.com.mirabilis.daggerviperarchitecture.repository.user.UserRepository
 import dagger.Binds
 import dagger.Module
@@ -15,9 +17,15 @@ import dagger.Module
 abstract class RepositoryModule {
 
     @Binds
+    abstract fun bindGetInfoRepository(repository: GetInfoRepository): InfoRepository.Get
+
+    @Binds
     abstract fun bindGetUserRepository(repository: GetUserRepository): UserRepository.Get
 
     @Binds
-    abstract fun bindGetInfoRepository(repository: GetInfoRepository): InfoRepository.Get
+    abstract fun bindAuthenticateUserRepository(repository: AuthenticateUserRepository): UserRepository.Authenticate
+
+    @Binds
+    abstract fun bindSaveUserRepository(repository: SaveUserRepository): UserRepository.Save
 
 }
