@@ -11,7 +11,7 @@ import br.com.mirabilis.daggerviperarchitecture.repository.listener.RepositoryLi
 object UserRepository {
 
     interface Get : Repository.Behavior {
-        fun getUser(): br.com.mirabilis.daggerviperarchitecture.entity.business.User
+        fun getUser(): br.com.mirabilis.daggerviperarchitecture.entity.business.User?
     }
 
     interface Authenticate : Repository.Behavior {

@@ -23,7 +23,7 @@ object UserInteractor {
     }
 
     interface Get {
-        fun getUser(): User
+        fun getUser(): User?
     }
 
     interface Authenticate : Interactor.LifeCycle {

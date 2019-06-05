@@ -14,7 +14,7 @@ class GetUserInteractor @Inject constructor(): UserInteractor.Get {
 
     @Inject lateinit var repository: UserRepository.Get
 
-    override fun getUser(): User {
+    override fun getUser(): User? {
         return repository.getUser()
     }
 

@@ -3,17 +3,19 @@ package br.com.mirabilis.daggerviperarchitecture.base.router
 import android.app.Activity
 
 /**
- * Created by rodrigosimoesrosa
+ * Created by rodrigosimoesrosa on 2019-05-27.
+ * Copyright © 2019. All rights reserved.
  */
-abstract class Router<A : Activity> : RouterActions<A> {
+interface Router<ACTIVITY : Activity> {
 
-    protected var activity: A? = null
+    var activity: ACTIVITY?
 
-    override fun attachActivity(view: A) {
-        activity = view
+    fun attachActivity(view: ACTIVITY) {
+        this.activity = view
     }
 
-    override fun unregister() {
-        activity = null
+    fun unregister() {
+        this.activity = null
     }
+
 }

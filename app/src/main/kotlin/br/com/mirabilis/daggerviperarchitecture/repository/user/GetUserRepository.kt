@@ -15,7 +15,7 @@ class GetUserRepository @Inject constructor() : UserRepository.Get {
         //TODO "not implemented"
     }
 
-    override fun getUser(): User {
+    override fun getUser(): User? {
         return User("Rodrigo", "TOKEN")
     }
 

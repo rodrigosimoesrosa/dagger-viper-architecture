@@ -12,14 +12,14 @@ import br.com.mirabilis.daggerviperarchitecture.base.view.PresenterView
  * Copyright © 2019. All rights reserved.
  */
 @Suppress("DEPRECATION")
-abstract class Presenter<V : PresenterView> : PresenterActions<V> {
+abstract class Presenter<VIEW : PresenterView> : PresenterActions<VIEW> {
 
-    var view: V? = null
+    var view: VIEW? = null
 
     private val interactors: MutableList<Interactor.LifeCycle> = mutableListOf()
 
     @Suppress("UNCHECKED_CAST")
-    override fun attachView(view: V) {
+    override fun attachView(view: VIEW) {
         this.view = view
     }
 
@@ -29,11 +29,11 @@ abstract class Presenter<V : PresenterView> : PresenterActions<V> {
         interactors.clear()
     }
 
-    protected fun <I : Interactor.LifeCycle> addInteractor(interactor: I) {
+    protected fun <INTERACTOR : Interactor.LifeCycle> addInteractor(interactor: INTERACTOR) {
         interactors.add(interactor)
     }
 
-    protected fun <I : Interactor.LifeCycle> removeInteractor(interactor: I): Boolean {
+    protected fun <INTERACTOR : Interactor.LifeCycle> removeInteractor(interactor: INTERACTOR): Boolean {
         return interactors.remove(interactor)
     }
 
@@ -46,7 +46,7 @@ abstract class Presenter<V : PresenterView> : PresenterActions<V> {
         }
     }
 
-    protected fun <T> call(parameter: T, function: (parameter: T) -> Unit) {
+    protected fun <TYPE> call(parameter: TYPE, function: (parameter: TYPE) -> Unit) {
         when (view) {
             is android.app.Fragment -> (view as android.app.Fragment).activity.runOnUiThread { function(parameter) }
             is Fragment -> (view as Fragment).activity?.runOnUiThread { function(parameter) }

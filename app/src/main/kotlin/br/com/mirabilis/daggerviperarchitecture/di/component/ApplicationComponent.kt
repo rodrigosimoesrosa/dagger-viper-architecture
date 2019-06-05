@@ -2,10 +2,7 @@ package br.com.mirabilis.daggerviperarchitecture.di.component
 
 import android.app.Application
 import br.com.mirabilis.daggerviperarchitecture.MyApplication
-import br.com.mirabilis.daggerviperarchitecture.di.module.ActivitiesModule
-import br.com.mirabilis.daggerviperarchitecture.di.module.InteractorModule
-import br.com.mirabilis.daggerviperarchitecture.di.module.PresenterModule
-import br.com.mirabilis.daggerviperarchitecture.di.module.RepositoryModule
+import br.com.mirabilis.daggerviperarchitecture.di.module.*
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
@@ -16,6 +13,7 @@ import javax.inject.Singleton
  * Copyright © 2019. All rights reserved.
  */
 @Component(modules = [
+    RouterModule::class,
     PresenterModule::class,
     RepositoryModule::class,
     InteractorModule::class,
