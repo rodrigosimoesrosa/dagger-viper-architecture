@@ -10,9 +10,9 @@ import javax.inject.Singleton
  * Copyright © 2019. All rights reserved.
  */
 @Singleton
-class LoginPresenter @Inject constructor() : Presenter<Login.View>(), Login.Presenter {
+class LoginPresenter @Inject constructor(private val loginInteractor: UserInteractor.Login) :
+        Presenter<Login.View>(), Login.Presenter {
 
-    @Inject lateinit var loginInteractor: UserInteractor.Login
     @Inject lateinit var getUserInteractor: UserInteractor.Get
 
     init {
@@ -22,7 +22,8 @@ class LoginPresenter @Inject constructor() : Presenter<Login.View>(), Login.Pres
     private inner class OnLogin : UserInteractor.OnLogin {
 
         override fun onSuccess() {
-            view?.showUser(getUserInteractor.getUser())
+            val user = getUserInteractor.getUser() ?: return
+            view?.showUser(user)
         }
 
         override fun onFailed(throwable: Throwable) {

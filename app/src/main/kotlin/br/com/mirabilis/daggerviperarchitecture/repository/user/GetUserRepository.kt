@@ -16,7 +16,8 @@ class GetUserRepository @Inject constructor() : UserRepository.Get {
     }
 
     override fun getUser(): User? {
-        return User("Rodrigo", "TOKEN")
+        //return User("Rodrigo", "TOKEN")
+        return null
     }
 
 }

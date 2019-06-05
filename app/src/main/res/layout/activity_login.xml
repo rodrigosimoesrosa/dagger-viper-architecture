@@ -20,11 +20,11 @@
 
     <LinearLayout
         android:id="@+id/fieldsLinearLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,19 +33,19 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <android.support.design.widget.TextInputLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/editUsername"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:ems="10"
-                android:layout_gravity="center"
                 android:gravity="center"
                 android:hint="@string/username"
                 android:inputType="textEmailAddress"
@@ -57,19 +57,19 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/editPassword"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:ems="10"
-                android:layout_gravity="center"
                 android:gravity="center"
                 android:hint="@string/password"
                 android:inputType="textPassword"
@@ -84,9 +84,9 @@
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
             android:text="@string/login"
-            android:textColor="@android:color/white"
-            android:background="@color/colorAccent"/>
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 

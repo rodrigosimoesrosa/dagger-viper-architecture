@@ -14,7 +14,7 @@ class AuthenticateUserRepository @Inject constructor() : UserRepository.Authenti
 
     override fun authenticate(username: String, password: String,
                               listener: RepositoryListener<User>) {
-        //TODO "not implemented"
+        listener.onResult(User("Rodrigo", "TOKEN"))
     }
 
     override fun unregister() {
