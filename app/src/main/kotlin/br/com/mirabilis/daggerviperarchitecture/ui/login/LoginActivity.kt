@@ -32,4 +32,12 @@ class LoginActivity : MVPBaseActivity<Login.View, Login.Presenter>(), Login.View
         editPassword.text?.clear()
     }
 
+    override fun showFailedPasswordEmpty() {
+        showToast(getString(R.string.empty_field, R.string.password))
+    }
+
+    override fun showFailedUsernameEmpty() {
+        showToast(getString(R.string.empty_field, R.string.username))
+    }
+
 }

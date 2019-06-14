@@ -7,5 +7,6 @@
     <string name="logout">Logout</string>
 
     <string name="software_engineer_android_com">software-engineer@android.com</string>
-    <string name="password_sample">!Q@w#e$r</string>
+    <string name="password_sample">123</string>
+    <string name="empty_field">You must add %d</string>
 </resources>

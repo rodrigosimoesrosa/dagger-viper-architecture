@@ -2,7 +2,6 @@ package br.com.mirabilis.daggerviperarchitecture.presenter.main
 
 import br.com.mirabilis.daggerviperarchitecture.base.presenter.viper.Presenter
 import br.com.mirabilis.daggerviperarchitecture.interactor.user.UserInteractor
-import br.com.mirabilis.daggerviperarchitecture.presenter.main.router.Router
 import br.com.mirabilis.daggerviperarchitecture.ui.main.MainActivity
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -12,8 +11,8 @@ import javax.inject.Singleton
  * Copyright © 2019. All rights reserved.
  */
 @Singleton
-class MainPresenter @Inject constructor(private val logoutUserInteractor: UserInteractor.Logout) :
-        Presenter<Main.View, MainActivity, Router>(), Main.Presenter {
+class MainPresenter @Inject constructor(val logoutUserInteractor: UserInteractor.Logout) :
+        Presenter<Main.View, MainActivity, Main.Router<MainActivity>>(), Main.Presenter {
 
     @Inject lateinit var getUserInteractor: UserInteractor.Get
 

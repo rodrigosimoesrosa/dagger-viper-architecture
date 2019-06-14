@@ -1,9 +1,9 @@
 package br.com.mirabilis.daggerviperarchitecture.di.module
 
-import br.com.mirabilis.daggerviperarchitecture.presenter.main.Main
-import br.com.mirabilis.daggerviperarchitecture.presenter.main.MainPresenter
 import br.com.mirabilis.daggerviperarchitecture.presenter.login.Login
 import br.com.mirabilis.daggerviperarchitecture.presenter.login.LoginPresenter
+import br.com.mirabilis.daggerviperarchitecture.presenter.main.Main
+import br.com.mirabilis.daggerviperarchitecture.presenter.main.MainPresenter
 import dagger.Binds
 import dagger.Module
 

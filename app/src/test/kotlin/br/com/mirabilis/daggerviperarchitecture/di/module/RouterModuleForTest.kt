@@ -4,22 +4,30 @@ import br.com.mirabilis.daggerviperarchitecture.presenter.login.Login
 import br.com.mirabilis.daggerviperarchitecture.presenter.main.Main
 import br.com.mirabilis.daggerviperarchitecture.ui.login.LoginActivity
 import br.com.mirabilis.daggerviperarchitecture.ui.main.MainActivity
-import dagger.Binds
+import com.nhaarman.mockito_kotlin.mock
 import dagger.Module
+import dagger.Provides
 
 /**
  * Created by rodrigosimoesrosa on 2019-05-27.
  * Copyright © 2019. All rights reserved.
  */
 @Module
-abstract class RouterModule {
+class RouterModuleForTest {
 
-    @Binds
-    abstract fun bindMainRouter(
-            presenter: br.com.mirabilis.daggerviperarchitecture.presenter.main.router.Router): Main.Router<MainActivity>
+    companion object {
+        val mainRouter: Main.Router<MainActivity> = mock()
+        val loginRouter: Login.Router<LoginActivity> = mock()
+    }
 
-    @Binds
-    abstract fun bindLoginRouter(
-            presenter: br.com.mirabilis.daggerviperarchitecture.presenter.login.router.Router): Login.Router<LoginActivity>
+    @Provides
+    fun provideMainRouter(): Main.Router<MainActivity> {
+        return mainRouter
+    }
+
+    @Provides
+    fun provideLoginRouter(): Login.Router<LoginActivity> {
+        return loginRouter
+    }
 
 }

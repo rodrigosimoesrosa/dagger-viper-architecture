@@ -1,5 +1,6 @@
 package br.com.mirabilis.daggerviperarchitecture.presenter.main
 
+import android.app.Activity
 import br.com.mirabilis.daggerviperarchitecture.base.presenter.PresenterActions
 import br.com.mirabilis.daggerviperarchitecture.base.view.PresenterView
 import br.com.mirabilis.daggerviperarchitecture.entity.business.User
@@ -20,7 +21,7 @@ object Main {
         fun logout()
     }
 
-    interface Router {
+    interface Router<ACTIVITY : Activity> : br.com.mirabilis.daggerviperarchitecture.base.router.Router<ACTIVITY> {
         fun showLogin()
     }
 

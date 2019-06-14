@@ -1,7 +1,7 @@
 package br.com.mirabilis.daggerviperarchitecture.di.module
 
-import br.com.mirabilis.daggerviperarchitecture.ui.main.MainActivity
 import br.com.mirabilis.daggerviperarchitecture.ui.login.LoginActivity
+import br.com.mirabilis.daggerviperarchitecture.ui.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

@@ -2,7 +2,6 @@ package br.com.mirabilis.daggerviperarchitecture.presenter.login
 
 import br.com.mirabilis.daggerviperarchitecture.base.presenter.viper.Presenter
 import br.com.mirabilis.daggerviperarchitecture.interactor.user.UserInteractor
-import br.com.mirabilis.daggerviperarchitecture.presenter.login.router.Router
 import br.com.mirabilis.daggerviperarchitecture.ui.login.LoginActivity
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -12,8 +11,8 @@ import javax.inject.Singleton
  * Copyright © 2019. All rights reserved.
  */
 @Singleton
-class LoginPresenter @Inject constructor(private val loginInteractor: UserInteractor.Login) :
-        Presenter<Login.View, LoginActivity, Router>(), Login.Presenter {
+class LoginPresenter @Inject constructor(val loginInteractor: UserInteractor.Login) :
+        Presenter<Login.View, LoginActivity, Login.Router<LoginActivity>>(), Login.Presenter {
 
     init {
         addInteractor(loginInteractor)
@@ -32,6 +31,16 @@ class LoginPresenter @Inject constructor(private val loginInteractor: UserIntera
     }
 
     override fun doLogin(username: String, password: String) {
+        if (username.isEmpty()) {
+            view?.showFailedUsernameEmpty()
+            return
+        }
+
+        if (password.isEmpty()) {
+            view?.showFailedPasswordEmpty()
+            return
+        }
+
         loginInteractor.login(username, password, OnLogin())
     }
 

@@ -4,13 +4,14 @@ import br.com.mirabilis.daggerviperarchitecture.presenter.login.Login
 import br.com.mirabilis.daggerviperarchitecture.ui.login.LoginActivity
 import br.com.mirabilis.daggerviperarchitecture.ui.main.MainActivity
 import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * Created by rodrigosimoesrosa on 2019-05-27.
  * Copyright © 2019. All rights reserved.
  */
-class Router @Inject constructor():
-        br.com.mirabilis.daggerviperarchitecture.base.router.Router<LoginActivity>, Login.Router {
+@Singleton
+class Router @Inject constructor(): Login.Router<LoginActivity> {
 
     override var activity: LoginActivity? = null
 
