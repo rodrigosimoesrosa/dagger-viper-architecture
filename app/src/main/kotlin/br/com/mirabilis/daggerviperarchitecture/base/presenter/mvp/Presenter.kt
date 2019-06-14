@@ -16,7 +16,7 @@ abstract class Presenter<VIEW : PresenterView> : PresenterActions<VIEW> {
 
     var view: VIEW? = null
 
-    private val interactors: MutableList<Interactor.LifeCycle> = mutableListOf()
+    protected val interactors: MutableList<Interactor.LifeCycle> = mutableListOf()
 
     @Suppress("UNCHECKED_CAST")
     override fun attachView(view: VIEW) {
