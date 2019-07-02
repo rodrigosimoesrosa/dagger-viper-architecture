@@ -1,5 +1,5 @@
 # Dagger + Viper Architecture
-In this sample, I'm not using reactive concepts. I'll implement a new repository which contains reactive programming on near future.
+Imperative approach.
 
 ## Requirements
 To run this project, you should have installed:
